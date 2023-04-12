@@ -8,19 +8,20 @@ import 'package:health_monitor/models/parameter.dart';
 import 'package:provider/provider.dart';
 import 'package:intl/intl.dart';
 
+import '../components/heartrate_tile.dart';
 import '../helper/textdate_helper.dart';
 
-class TensionPage extends StatefulWidget {
-  const TensionPage({super.key});
+class HeartRatePage extends StatefulWidget {
+  const HeartRatePage({super.key});
 
   @override
-  State<TensionPage> createState() => _TensionPageState();
+  State<HeartRatePage> createState() => _HeartRatePageState();
 }
 
-class _TensionPageState extends State<TensionPage> {
+class _HeartRatePageState extends State<HeartRatePage> {
   final date = TextEditingController();
   final value = TextEditingController();
-  String parameterName = "Давление";
+  String parameterName = "Сердцебиение";
 
   void addNewParameter() {
     showDialog(
@@ -132,10 +133,10 @@ class _TensionPageState extends State<TensionPage> {
               ListView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: value.getParametersList().length,
-                  itemBuilder: (context, index) => TensionTile(
-                        date: value.getParametersList()[index].date,
-                        value: value.getParametersList()[index].value,
+                  itemCount: value.getHeartRateList().length,
+                  itemBuilder: (context, index) => HearrateTile(
+                        date: value.getHeartRateList()[index].date,
+                        value: value.getHeartRateList()[index].value,
                       ))
             ],
           )),

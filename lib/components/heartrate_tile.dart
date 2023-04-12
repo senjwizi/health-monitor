@@ -3,15 +3,15 @@ import 'package:intl/intl.dart';
 
 import '../themes.dart';
 
-class TensionTile extends StatelessWidget {
+class HearrateTile extends StatelessWidget {
   final DateTime date;
   final String value;
 
-  const TensionTile({super.key, required this.date, required this.value});
+  const HearrateTile({super.key, required this.date, required this.value});
 
   @override
   Widget build(BuildContext context) {
-    String unit = " мм рт. ст.";
+    String unit = " ударов в мин.";
     DateFormat format = DateFormat("dd.MM.yyyy");
     double val = double.parse(value);
 
@@ -19,9 +19,9 @@ class TensionTile extends StatelessWidget {
       margin: EdgeInsets.only(left: 10, right: 10, top: 15),
       padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       decoration: BoxDecoration(
-        color: val > 139
+        color: val > 100
             ? Colors.red[300]
-            : val > 125
+            : val > 80
                 ? Colors.orange[300]
                 : Colors.green[300],
         borderRadius: BorderRadius.circular(10),

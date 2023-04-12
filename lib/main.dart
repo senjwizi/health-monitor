@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:health_monitor/data/parameter_data.dart';
+import 'package:health_monitor/pages/home_page.dart';
+import 'package:health_monitor/pages/login_page.dart';
+import 'package:health_monitor/pages/signup_page.dart';
+import 'package:health_monitor/pages/welcome_page.dart';
 import 'package:provider/provider.dart';
 import 'package:health_monitor/pages/tension_page.dart';
 
@@ -16,7 +20,7 @@ class MyApp extends StatelessWidget {
       create: (context) => ParameterData(),
       builder: (context, child) => const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: TensionPage(),
+        home: WelcomePage(),
       ),
     );
   }
